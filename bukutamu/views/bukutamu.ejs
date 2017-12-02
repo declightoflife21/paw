@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buku Tamu</title>
+    <link rel="stylesheet" type="text/css" href="/../css/bootstrap.min.css">
+    <script type="text/javascript" src="/../js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+  <h1>Hello, Node!</h1>
+  <p>Ekspress je'es</p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="bukutamu/tambah">+ Add Guest</a></p>
+</div>
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading"><%=page_title%></div>
+          <div class="panel-body">
+              <!-- Table -->
+
+              <table class="table">
+                <tr>
+                    <td>No.</td>
+                    <td>Nama </td>
+                    <td>Email </td>
+                    <td>Pesan </td>
+                    <td>Modify </td>
+                </tr>
+                <% if(data.length){ 
+
+                 for(var i = 0;i < data.length;i++) { %>
+
+                 <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].name_guest%></td>
+                    <td><%=data[i].email_guest%></td>
+                    <td><%=data[i].message_guest%></td>
+                    <td>
+                        <a class="btn btn-warning" href="../bukutamu/ubah/<%=data[i].id_guest%>"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+
+                        <a class="btn btn-danger" href="../bukutamu/hapus/<%=data[i].id_guest%>"><i class="glyphicon glyphicon-trash"></i> Hapus</a>
+
+                    </td>
+                </tr>
+                <% }
+
+            }else{ %>
+            <tr>
+                <td colspan="3">No Guest</td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

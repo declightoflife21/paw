@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buku Tamu</title>
+  <link rel="stylesheet" type="text/css" href="/../css/bootstrap.min.css">
+  <script type="text/javascript" src="/../js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading"><%=page_title%></div>
+      <div class="panel-body">
+        <form class="form-horizontal" role="form" method="post" action="/bukutamu/ubah/<%=data[0].id_guest%>">
+          <div class="form-group">
+            <label for="nama" class="col-sm-2 control-label">Nama</label>
+            <div class="col-sm-10">
+            <input type="text" name="nama" value="<%=data[0].name_guest%>" class="form-control" id="nama" placeholder="Nama">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+            <input type="email" name="email" value="<%=data[0].email_guest%>" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pesan" class="col-sm-2 control-label">Pesan</label>
+            <div class="col-sm-10">
+            <textarea class="form-control" name="messages" id="pesan" placeholder="Pesan .. "><%=data[0].message_guest%></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Save">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </body>
