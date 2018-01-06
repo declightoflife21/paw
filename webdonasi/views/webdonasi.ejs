@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Donasi</title>
+    <link rel="stylesheet" type="text/css" href="/../css/bootstrap.min.css">
+    <script type="text/javascript" src="/../js/bootstrap.min.js"></script>
+
+</head>                    
+<body>
+    <div class="container">
+        <div class="jumbotron">
+  <h1>Campaign</h1>
+  <p>MaPes</p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="webdonasi/tambah">+ Add Campaign </a></p>
+</div>
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading"><%=page_title%></div>
+          <div class="panel-body">
+              <!-- Table -->
+
+              <table class="table">
+                <tr>
+                    <td>No.</td>
+                    <td>id </td>
+                    <td>judul </td>
+                    <td>foto </td>
+                    <td>deskripsi </td>
+                    <td>start </td>
+                    <td>deadline </td>
+                    <td>target </td>
+                    <td>income </td>
+                    
+                </tr>
+                <% if(data.length){ 
+
+                 for(var i = 0;i < data.length;i++) { %>
+
+                 <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].id_cpg%></td>
+                    <td><%=data[i].judul_cpg%></td>
+                    <td><%=data[i].foto_cpg%></td>
+                    <td><%=data[i].desc_cpg%></td>
+                    <td><%=data[i].start_cpg%></td>
+                    <td><%=data[i].deadline_cpg%></td>
+                    <td><%=data[i].target_cpg%></td>
+                    <td><%=data[i].income_cpg%></td>
+                    <td>
+                        <a class="btn btn-warning" href="../webdonasi/ubah/<%=data[i].id_cpg%>"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+
+                        <a class="btn btn-danger" href="../webdonasi/hapus/<%=data[i].id_cpg%>"><i class="glyphicon glyphicon-trash"></i> Hapus</a>
+
+                    </td>
+                </tr>
+                <% }
+
+            }else{ %>
+            <tr>
+                <td colspan="3">No Campaign</td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

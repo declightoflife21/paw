@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>OUR CHARITY</title>
+    <title>WEBDONASI</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -14,17 +14,16 @@
         border:1px solid black;
         height: 500px;
       }
-    </style>
 
-    <nav class="navbar navbar-inverse">
-        <style type="text/css">
+    #nav li.active a {
+      background-color: #32CD32  ;
+    }
     .navbar-inverse {
       background-color: #228B22 ;
-
       font-size:18px;
-
     }
 </style>
+<nav class="navbar navbar-inverse">
         <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
           <div class="container" >
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,25 +34,30 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html">OUR CHARITY</a>
+              <a class="navbar-brand" href="index.html">WEBDONASI</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav" ></ul>
 
-              <ul class="nav navbar-nav navbar-right" style="color : white">
+              <ul id="nav" class="nav navbar-nav navbar-right" style="color : white">
                 <li><a href="index.html">Beranda</a></li>
                 <li class="dropdown">
                   <a href="#dropdown-menu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Program <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="campaign.html">Campaign</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="#">Something else here</a></li>
+                    <li><a href="daftarcampaign.html">Daftar Campaign</a></li>
+                    <li class="active"><a href="donate.html">Donate</a></li>
+                    <li><a href="login.html">Login</a></li>
                   </ul>
                 </li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-search"></i></a></li>
+                <form class="navbar-form navbar-right">
+                <div class="form-group">
+                  <input type="text" style="width: 200px; background:#000;opacity:0.4;filter:alpha(opacity=40);" class="form-control" placeholder="Search" >
+                </div>
+              </form>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -61,45 +65,29 @@
         </nav>
   </head>
 
-  <body>
-  <section id="donate" class="parallax section">
-<div class="wrapsection">
-  <div class="parallax-overlay"></div>
+  <body style="background : #90EE90">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-xs-12">
         <div class="maintitle">
-          <h3 class="section-title">DONATE</h3>
           <p class="lead">
-            If you have questions about our events, don't hesitate to send us your message. This is a real working contact form, test it!
+            
           </p>
         </div>
-        <form id="contact" name="contact" method="post" class="text-left">
-          <fieldset>
-            <div class="row">
-              <div class="col-md-4 wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s">
-                <label for="name">Name<span class="required">*</span></label>
-                <input type="text" name="name" id="name" size="30" value="" required/>
-              </div>
-              <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="2s">
-                <label for="email">Email<span class="required">*</span></label>
-                <input type="text" name="email" id="email" size="30" value="" required/>
-              </div>
-              <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="2s">
-                <label for="phone">Phone</label>
-                <input type="text" name="phone" id="phone" size="30" value=""/>
-              </div>
-            </div>
-            <div class="wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="1.5" style="margin-top:15px;">
-              <label for="message">Message<span class="required">*</span></label>
-              <textarea name="message" id="message" required></textarea>
-            </div>
-            <div class="wow fadeIn animated" data-wow-delay="0.3" data-wow-duration="1.5s">
-              <input id="submit" type="submit" name="submit" value="Send"/>
-            </div>
-          </fieldset>
-        </form>
-        <div id="success">    
+        <form class="form-signin" id="login" method="POST" action="act.php">
+        <input  type="hidden" name="act" value="login">
+        <h2 class="form-donate" text-align="center">Donate</h2>
+        <input style="margin-top : 5px;" type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input style="margin-top : 5px;" type="text" id="judulCampaign" name="judul" class="form-control" placeholder="Judul Campaign" required>
+        <input style="margin-top : 5px;" type="text" id="deskripsicam" name="deskripsi" class="form-control" placeholder="Deskripsi Campaign" required>
+        
+        <button style="margin-top : 5px;" type="submit" class="btn btn-success btn-default pull-left"><span class="glyphicon glyphicon-off"></span> Daftar</button>
+        <button style="margin-top : 5px; margin-left:5px" type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        <p style="text-align:right; margin-top : 10px;">Not a member? <a href="#" >Sign Up</a></p>
+          <p style="text-align:right; margin-top : 5px;">Forgot <a href="#">Password?</a></p>
+      </form>
+      <!-- 
+       <div id="success">    
           <p class="contactalert">
             Your message was sent succssfully! I will be in touch as soon as I can.
           </p>      
@@ -109,11 +97,13 @@
              Something went wrong, try refreshing and submitting the form again.
           </p>      
         </div>
+
+       -->
+       
       </div>
     </div>
   </div>
-</div>
-</section>
+
 
   
     <section id="credits" class="text-center">
@@ -122,7 +112,7 @@
   <a href="#"><img src="image/t.png"></a>
   <a href="#"><img src="image/ig.png"></a>
   <a href="#"><img src="image/inn.png"></a>
-  </span><br/>Copyright &copy; OUR CHARITY</a> 
+  </span><br/>Copyright &copy; WEBDONASI</a> 
   <br/>
 </section>
 

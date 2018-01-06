@@ -1,0 +1,19 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+	"test" :"jasmine"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "3.5.1",
+    "express-myconnection": "1.0.4",
+    "jade": "*",
+    "mysql": "2.2.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
